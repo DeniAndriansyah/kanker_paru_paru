@@ -85,15 +85,13 @@ kanker_diagnosis =''
 
 ## membuat tombol prediksi
 if st.button('Prediksi Kanker Paru - Paru'):
-    kanker_prediction = model.predict([[Age, Gender, Air_Pollution, Alcohol_use, Dust_Allergy, OccuPational_Hazards, Genetic_Risk, chronic_Lung_Disease, Balanced_Diet, Obesity, Coughing_of_Blood, Fatigue, Weight_Loss, Shortness_of_Breath, Wheezing, Swallowing_Difficulty, Clubbing_of_Finger_Nails,  Frequent_Cold, Dry_Cough, Snoring]])
+     prediksi = model.predict([[Age, Gender, Air_Pollution, Alcohol_use, Dust_Allergy, OccuPational_Hazards, Genetic_Risk, chronic_Lung_Disease, Balanced_Diet, Obesity, Coughing_of_Blood, Fatigue, Weight_Loss, Shortness_of_Breath, Wheezing, Swallowing_Difficulty, Clubbing_of_Finger_Nails,  Frequent_Cold, Dry_Cough, Snoring]])
 
-if kanker_prediction[0] == 0:
-    kanker_diagnosis = 'Pasien Terkena Kanker Paru-Paru (High)'
-elif kanker_prediction[0] == 2:
-    kanker_diagnosis = 'Pasien Terkena Kanker Paru-Paru (Medium)'
-elif kanker_prediction[0] == 1:
-    kanker_diagnosis = 'Pasien Terkena Kanker Paru-Paru (Low)'
-else:
-    kanker_diagnosis = 'Pasien Tidak Terkena Kanker Paru-Paru'
-st.success(kanker_diagnosis)
+if (prediksi [0] == 0):
+        prediksi = 'Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Tinggi'
+    elif(prediksi == 2):
+        prediksi = 'Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Sedang'
+    else:
+        prediksi = 'Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah'
+st.success(prediksi)
 
