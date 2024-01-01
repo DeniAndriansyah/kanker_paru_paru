@@ -47,7 +47,7 @@ with col3:
                 Balanced_Diet  = st.number_input('Diet Seimbang')
 
 with col1:
-                Obesity  = st.number_input('obesitas')
+                Obesity  = st.number_input('Obesitas')
 
 with col2:
                 Coughing_of_Blood   = st.number_input('Batuk Darah')
