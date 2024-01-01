@@ -79,15 +79,13 @@ with col1:
 with col2:
                 Snoring    = st.number_input('Mendengkur')
 
+prediksi = ''
+if st.button('Hasil Prediksi'):
+    prediksi = model.predict([[Patient_Id, Age,	Gender,	Air_Pollution, Alcohol_use, Dust_Allergy, OccuPational_Hazards,	Genetic_Risk, 
+                               chronic_Lung_Disease, Balanced_Diet, Obesity, Smoking, Passive_Smoker, Chest_Pain, Coughing_of_Blood, Fatigue, 
+                               Weight_Loss, Shortness_of_Breath, Wheezing, Swallowing_Difficulty, Clubbing_of_Finger_Nails, Dry_Cough]])
 
-# code for prediction
-kanker_diagnosis =''
-
-## membuat tombol prediksi
-if st.button('Prediksi Kanker Paru - Paru'):
-     prediksi = model.predict([[Age, Gender, Air_Pollution, Alcohol_use, Dust_Allergy, OccuPational_Hazards, Genetic_Risk, chronic_Lung_Disease, Balanced_Diet, Obesity, Coughing_of_Blood, Fatigue, Weight_Loss, Shortness_of_Breath, Wheezing, Swallowing_Difficulty, Clubbing_of_Finger_Nails,  Frequent_Cold, Dry_Cough, Snoring]])
-
-if (prediksi [0] == 0):
+    if (prediksi [0] == 0):
         prediksi = 'Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Tinggi'
     elif(prediksi == 2):
         prediksi = 'Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Sedang'
