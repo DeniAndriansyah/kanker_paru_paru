@@ -9,7 +9,7 @@ from PIL import Image
 model = pickle.load(open('kanker-paru-paru.sav', 'rb'))
 
 ##import data
-image = Image.open("kanker.jpg")
+image = Image.open("kp.jpg")
 st.image(image, use_column_width=True)
 
 ## judul web
