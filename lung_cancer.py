@@ -14,7 +14,6 @@ st.image(image, use_column_width=True)
 
 ## judul web
 st.title('Prediksi Kanker Paru-Paru')
-st.text('(Deni Andriansyah)')
 
 ## atribut
 col1, col2, col3 = st.columns(3)
@@ -78,8 +77,10 @@ with col1:
 
 with col2:
                 Snoring    = st.number_input('Mendengkur')
-
+## code for prediction
 prediksi = ''
+
+## membuat tombol prediksi
 if st.button('Hasil Prediksi'):
     prediksi = model.predict([[Age, Gender, Air_Pollution, Alcohol_use, Dust_Allergy, OccuPational_Hazards, Genetic_Risk, chronic_Lung_Disease, Balanced_Diet, Obesity, Coughing_of_Blood, Fatigue, Weight_Loss, Shortness_of_Breath, Wheezing, Swallowing_Difficulty, Clubbing_of_Finger_Nails, Frequent_Cold, Dry_Cough, Snoring]])
 
