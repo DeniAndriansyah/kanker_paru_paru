@@ -146,6 +146,37 @@ for i in df.columns:
 ![Alt text](a24.jpeg) <br>
 ![Alt text](a25.jpeg) <br>
 ![Alt text](a26.jpeg) <br>
+
+Menampilkan jumlah kemunculan setiap nilai dalam kolom 'Dust Allergy' dari DataFrame df. Ini akan memberikan informasi tentang seberapa sering setiap nilai muncul dalam kolom 'Dust Allergy'.
+```bash
+print(df['Dust Allergy'].value_counts())
+plt.pie(df.Smoking.value_counts(),labels=df.Smoking.value_counts().index,autopct='%.0f%%')
+plt.show()
+```
+![Alt text](b.jpeg) <br>
+
+Menampilkan countplot yang menggambarkan jumlah kemunculan setiap kategori dalam kolom 'Alcohol use'. Kolom 'Alcohol use' berisi informasi tentang tingkat konsumsi alkohol, seperti 'Low', 'Medium', atau 'High'. Grafik ini membagi data berdasarkan kategori 'Alcohol use' 
+```bash
+sns.countplot(x="Alcohol use", hue="Level", data=df)
+plt.show()
+```
+![Alt text](c.jpeg) <br>
+
+Perintah ini digunakan untuk membuat sebuah jenis grafik bernama "countplot", kita ingin melihat seberapa sering setiap jenis obesitas muncul dalam data tersebut 
+```bash
+plt.figure(figsize=(18,10))
+sns.countplot(x='Obesity',data=df,hue = 'Level', palette='bright'))
+```
+![Alt text](d.jpeg) <br>
+
+seberapa sering setiap kategori dalam kolom 'Genetic Risk' muncul dalam data 
+```bash
+sns.countplot(x="Genetic Risk", hue="Level", data=df)
+plt.show()
+```
+![Alt text](e.jpeg) <br>
+
+
 ## Visualisasi Data
 Untuk melihat visualisasi dan memahami hubungan antara berbagai fitur dalam dataset dengan warna yang menggambarkan tingkat dan arah korelasi antar fitur
 ```bash
