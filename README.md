@@ -279,7 +279,25 @@ import pickle
 filename = 'kanker-paru-paru.sav'
 pickle.dump (knn, open(filename, 'wb'))
 ```
+<br>
+##Evaluasi
+Lalu disini memprediksi tingkat keparahan kanker paru paru berdasrkan data masukan
+```bash
+input_data = (33, 1, 2, 4, 5, 4, 3, 2, 2, 4, 4, 3, 4, 2, 2, 3, 1, 2, 3, 4)
+input_data_numpy = np.asarray(input_data)
+data_reshaped = input_data_numpy.reshape(1, -1)
+prediksi = knn.predict(data_reshaped)
+print(prediksi)
 
+if (prediksi[0] == 0):
+    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Tinggi')
+elif(prediksi == 2):
+    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Sedang')
+else:
+    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah')
+```
+Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah
+ 
 ## Deployment
 [Kanker App](https://kankerparuparu-zz2ljvz6d3872djuyxr5at.streamlit.app/).
 
