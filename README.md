@@ -49,18 +49,21 @@ Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar ana
   
 ## Data Preparation
 Dataset yang saya gunakan yaitu mengambil dari Kaggle
-
 Pertama import library yang akan digunakan
 ``` bash
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import LabelEncoder
+encode = LabelEncoder()
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 ```
-Selanjutnya agar bisa mendownload dataset dari Kaggle melalui  google colab  dengan Kaggle buat token di Kaggle lalu download
+Kemudian selanjutnya agar bisa mendownload dataset dari Kaggle melalui  google colab  dengan Kaggle buat token di Kaggle lalu download
 dan unggah token yang sudah di download  pada script di bawah ini
 ```bash
 from google.colab import files
@@ -76,7 +79,7 @@ File kaggle.json berisi kunci API Anda yang akan digunakan untuk otentikasi saat
 ```
 Selanjutnya mendwonload dataset dari Kaggle
 ```bash
-!kaggle datasets download -d ulrikthygepedersen/fastfood-nutrition
+!kaggle datasets download -d thedevastator/cancer-patients-and-air-pollution-a-new-link
 ```
 Setelah terdownload extract file yang telah terdownload tadi
 ```bash
@@ -86,41 +89,27 @@ Setelah terdownload extract file yang telah terdownload tadi
 ```
 Lanjut dengan membaca file csv yang telah di extract sebelumnya
 ```bash
-df = pd.read_csv('/content/fastfood-nutrition/fastfood.csv')
+df = pd.read_csv('/content/cancer-patients-and-air-pollution-a-new-link/cancer patient data sets.csv')
 ```
 Lalu melihat 5 baris pertama pada datasetnya untuk memeriksa data apakah sudah benar
 ```bash
 df.head()
 ```
-Dan juga melihat 5 baris terakhir pada dataset untuk memeriksa data apakah sudah benar juga
-```bash
-df.tail()
-```
-Dikarenkan ada nilai yang hilang maka disini akan menghapus nilai tersebut
-```bash
-df.dropna(inplace=True)
-```
-Selesai menghapus data yang hilang, agar dapat melihat mengenai type data maka
+Untuk melihat type data dari masing masing atribut atau fitur dari dataset dengan perintah
 ```bash
 df.info()
 ```
-Selanjutnya disini akan memeriksa apakah sudah aman atau masih terdapat nialai yang hilang
+Untuk melihat data secara acak dari tabel yang mungkin besar, sehingga kita bisa mendapatkan gambaran umum tentang jenis informasi yang terdapat dalam tabel tersebut tanpa harus melihat semua baris datanya.
 ```bash
-sns.heatmap(df.isnull())
+df.sample()
 ```
-![Alt text](hm.png) <br>
-Bisa dilihat aman<br>
-Selanjutnya agar mengetahui detail informasi dari dataset
+Selanjutnya disini akan melihat untuk penghitungan jumlah kemunculan setiap nilai yang ada dalam kolom 'Level' dari DataFrame
 ```bash
-df.describe()
+df['Level'].value_counts()
 ```
-Lalu selanjutnya agar mengetahui jumlah masing-masing jenis restoran yang terdaftar 
+untuk menghitung jumlah nilai yang hilang di setiap kolom dalam DataFrame
 ```bash
-df['restaurant'].value_counts()
-```
-Dan juga disini agar mengetahui jumlah masing-masing jenis item 
-```bash
-df['item'].value_counts()
+df.isna().sum()
 ```
 Selanjutnya 
 ## Visualisasi Data
