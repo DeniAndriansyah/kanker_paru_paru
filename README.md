@@ -48,7 +48,7 @@ Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar ana
 - Level = Level kanker paru - paru = object
   
 ## Data Preparation
-Dataset yang saya gunakan yaitu mengambil dari Kaggle
+Dataset yang saya gunakan yaitu mengambil dari Kaggle<br>
 Pertama import library yang akan digunakan
 ``` bash
 import pandas as pd
