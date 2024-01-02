@@ -272,8 +272,15 @@ plt.ylabel('Actual')
 ```
 ![Alt text](i.jpeg) <br>
 
+Selanjutnya
+import pickle
+
+filename = 'kanker-paru-paru.sav'
+pickle.dump (knn, open(filename, 'wb'))
+```
+
 ## Deployment
-[My Estimation App](https://estimasi-kalori-f7tfpsa8flrfnuehxcjzlx.streamlit.app/).
+[Kanker App](https://kankerparuparu-zz2ljvz6d3872djuyxr5at.streamlit.app/).
 
 ![Alt text](tm.png)
 
