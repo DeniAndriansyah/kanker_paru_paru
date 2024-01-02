@@ -214,6 +214,37 @@ Setelah itu lakukan split data, memisahkan data training dan data testing
 ```bash
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 ```
+apakah benar pada plot diatas mari kita buktikan lagi
+```bash
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(x_train, y_train)
+y_pred = knn.predict(x_test)
+acc_knn = accuracy_score(y_test, y_pred)
+print("Metode K-Nearst Neighboard")
+print("Test set accuracy: {:.2f}".format(acc_knn))
+print(f"Test set accuracy: {acc_knn}")
+```
+![Alt text](k.jpeg) <br>
+
+Lalu disini memprediksi tingkat keparahan kanker paru paru berdasrkan data masukan
+```bash
+input_data = (33, 1, 2, 4, 5, 4, 3, 2, 2, 4, 4, 3, 4, 2, 2, 3, 1, 2, 3, 4)
+input_data_numpy = np.asarray(input_data)
+data_reshaped = input_data_numpy.reshape(1, -1)
+prediksi = knn.predict(data_reshaped)
+print(prediksi)
+
+if (prediksi[0] == 0):
+    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Tinggi')
+elif(prediksi == 2):
+    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Sedang')
+else:
+    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah')
+```
+Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah
+
+## Visualisasi Hasil Algoritma
+Untuk melihat visualisasi hasil algoritma yang dihasilkan
 disini saya akan mengukur kinerja model K-Nearest Neighbors (KNN) pada dataset yang sudah dibagi sebelumnya 
 ```bash
 accuracies = []
@@ -237,24 +268,15 @@ plt.grid(True)
 plt.show()
 ```
 ![Alt text](j.jpeg) <br>
-disini saya kembali melakukan split data, memisahkan data training dan data testing agar memastikan lagi 
-```bash
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
-```
-apakah benar pada plot diatas mari kita buktikan lagi
-```bash
-knn = KNeighborsClassifier(n_neighbors=3)
-knn.fit(x_train, y_train)
-y_pred = knn.predict(x_test)
-acc_knn = accuracy_score(y_test, y_pred)
-print("Metode K-Nearst Neighboard")
-print("Test set accuracy: {:.2f}".format(acc_knn))
-print(f"Test set accuracy: {acc_knn}")
-```
-![Alt text](k.jpeg) <br>
 
-## Visualisasi Hasil Algoritma
-Untuk melihat visualisasi hasil algoritma yang dihasilkan
+Selanjutnya save model sebagai sav agar dapat digunakan pada streamlit
+```bash
+import pickle
+
+filename = 'kanker-paru-paru.sav'
+pickle.dump (knn, open(filename, 'wb'))
+```
+## Evaluasi
 ```bash
 print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
@@ -272,30 +294,6 @@ plt.ylabel('Actual')
 ```
 ![Alt text](i.jpeg) <br>
 
-Selanjutnya save model sebagai sav agar dapat digunakan pada streamlit
-```bash
-import pickle
-
-filename = 'kanker-paru-paru.sav'
-pickle.dump (knn, open(filename, 'wb'))
-```
-## Evaluasi
-Lalu disini memprediksi tingkat keparahan kanker paru paru berdasrkan data masukan
-```bash
-input_data = (33, 1, 2, 4, 5, 4, 3, 2, 2, 4, 4, 3, 4, 2, 2, 3, 1, 2, 3, 4)
-input_data_numpy = np.asarray(input_data)
-data_reshaped = input_data_numpy.reshape(1, -1)
-prediksi = knn.predict(data_reshaped)
-print(prediksi)
-
-if (prediksi[0] == 0):
-    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Tinggi')
-elif(prediksi == 2):
-    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Sedang')
-else:
-    print('Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah')
-```
-Keparahan Kanker Paru-Paru Pasien Berada di Tingkat Rendah
  
 ## Deployment
 [Kanker App](https://kankerparuparu-zz2ljvz6d3872djuyxr5at.streamlit.app/).
