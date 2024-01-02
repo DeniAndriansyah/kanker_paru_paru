@@ -5,7 +5,7 @@
 
 ## Domain Proyek
 
-Estimasi makanan cepat saji yang tinggi akan kalori, jika tidak menyeimbangkannya dengan aktivitas fisik yang cukup dapat menyebabkan kelebihan berat badan dan obesitas. Kondisi ini meningkatkan risiko terkena berbagai penyakit, seperti diabetes, penyakit jantung, dan beberapa jenis kanker. Untuk itu saya berupaya membuat perhitungan kalori dengan 8 parameter yang sudah ditentukan agar mencegah kalian terkena berbagai resiko penyakit.
+
 
 ## Business Understanding
 
