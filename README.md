@@ -17,8 +17,9 @@ Untuk mengetahui gejala gejala yang dialami pasien serta tingkat keparahan kanke
 
 ### Solution statements
 Pengembangan model prediksi untuk membantu memprediksi seberapa parah kanker paru - paru yang dialami pasien menggunakan algoritma K-Nearst Neighbors
+
 ## Data Understanding
-Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar analisis terkait prediksi kanker paru - paru<br>
+Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar analisis terkait prediksi kanker paru - paru <br>
 [Lung Cancer](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link).
 
 ### Variabel-variabel pada Fastfood Nutrition adalah sebagai berikut:
@@ -176,32 +177,16 @@ plt.show()
 ```
 ![Alt text](e.jpeg) <br>
 
-Selanjutnya 
-Melakukan preprocessing data disini saya memunculkan 5 baris pertama untuk melihat lagi data
-```bash
-df.head()
-```
-![Alt text](f.jpeg) <br>
+Selanjutnya melakukan preprocessing 
 lalu disini untuk mengubah nilai dalam kolom menjadi bentuk numerik 
 ```bash
 df['Level'] = encode.fit_transform(df['Level'])
 ```
-saya munculkan kembali untuk melihat apakah sudah menjadi numerik
-```bash
-df.head()
-```
-![Alt text](g.jpeg) <br>
-ternyata sudah aman
 selanjutnya disini saya menghapus kolom 'index' dan 'Patient Id'
 ```bash
 df = df.drop(columns=['index', 'Patient Id'])
 ```
-saya kembali memumnculkan 5 baris pertama karena apa agar meyakinkan saja telah hilang kolom tersebut atau tidak
-```bash
-df.head()
-```
-![Alt text](h.jpeg) <br>
-ternyata aman juga
+
 ## Modeling
 Untuk melakukan modeling  memakai algoritma K-Nearst Neighbors dimana harus memisahkan atribut yang akan dijadikan sebagai fitur(x) dan atribut mana yang dijadikan label(y).
 ```bash
@@ -214,7 +199,7 @@ Setelah itu lakukan split data, memisahkan data training dan data testing
 ```bash
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 ```
-apakah benar pada plot diatas mari kita buktikan lagi
+Selanjutnya membuat model yang akan digunakan disini saya menggunakan model K-Nearst Neighbors
 ```bash
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(x_train, y_train)
@@ -226,7 +211,7 @@ print(f"Test set accuracy: {acc_knn}")
 ```
 ![Alt text](k.jpeg) <br>
 
-Lalu disini memprediksi tingkat keparahan kanker paru paru berdasrkan data masukan
+Lalu disini memprediksi tingkat keparahan kanker paru paru berdasarkan data masukan
 ```bash
 input_data = (33, 1, 2, 4, 5, 4, 3, 2, 2, 4, 4, 3, 4, 2, 2, 3, 1, 2, 3, 4)
 input_data_numpy = np.asarray(input_data)
@@ -277,13 +262,14 @@ filename = 'kanker-paru-paru.sav'
 pickle.dump (knn, open(filename, 'wb'))
 ```
 ## Evaluasi
+Selanjutnya evaluasi kinerja model 
 ```bash
 print("Confusion Matrix:")
 print(confusion_matrix(y_test, y_pred))
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 ```
-selanjutnya 
+lalu  membuat visualisasi dari confusion matrix
 ```bash
 cm = confusion_matrix(y_test, y_pred)
 plt.figure(figsize = (10, 7))
@@ -294,7 +280,6 @@ plt.ylabel('Actual')
 ```
 ![Alt text](i.jpeg) <br>
 
- 
 ## Deployment
 [Kanker App](https://kankerparuparu-zz2ljvz6d3872djuyxr5at.streamlit.app/).
 
