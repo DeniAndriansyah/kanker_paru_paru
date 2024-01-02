@@ -10,7 +10,7 @@ Proyek ini ditujukan untuk melakukan analisis kangker paru - paru, penyakit ini 
 Memahami tentang penyakit kanker paru - paru dengan melibatkan gejala - gejala yang dialami yang menjadi penyebab kanker paru - paru itu muncul pada pasien seberapa parah kanker yang dialaminya dan diharapakan bisa menjadi alat yang dapat mengetahui seberapa parah kanker yang dialami pasien.
 
 ### Problem Statements
-Agar dapat mengetahui seberapa tingkat keparahan pasien kanker paru - paru untuk segera mendapatkan perawatan yang baik
+Agar dapat mengetahui seberapa tingkat keparahan pasien kanker paru - paru untuk segera mendapatkan perawatan yang efektif
 
 ### Goals
 Untuk mengetahui gejala gejala yang dialami pasien serta tingkat keparahan kanker paru - paru pasien agar mambatu langkah perawatan selnajutnya yang efektif untuk pasien kanker paru - paru
@@ -22,30 +22,31 @@ Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar ana
 [Lung Cancer](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link).
 
 ### Variabel-variabel pada Fastfood Nutrition adalah sebagai berikut:
-- Patient Id =
-- Age =
-- Gender =
-- Air_Pollution =
-- Alcohol_use =
-- Dust_Allergy =
-- Genetic_Risk =
-- chronic_Lung_Disease =
-- Balanced_Diet =
-- Obesity =
-- Smoking =
-- Passive_Smoker =
-- Chest_Pain =
-- Coughing_of_Blood =
-- Fatigue =
-- Weight_Loss =
-- Shortness_of_Breath =
-- Wheezing =
-- Swallowing_Difficulty =
-- Clubbing_of_Finger_Nails =
-- Frequent_Cold =
-- Dry_Cough =
-- Snoring =
-- Level =
+- Patient Id = Identitas Pasien = object
+- Age = Usia pasien = int64
+- Gender = Jenis kelamin pasien = int64
+- Air_Pollution = Tingkat paparan polusi udara pasien = int64
+- Alcohol_use = Tingkat penggunaan alkohol pasien = int64
+- Dust_Allergy = Tingkat alergi debu pasien = int64
+- Genetic_Risk = Tingkat penyakit paru kronis pasien = int64
+- chronic_Lung_Disease = Tingkat penyakit paru kronis pasien = int64
+- Balanced_Diet = Tingkat diet seimbang pasien = int64
+- Obesity = Tingkat obesitas pasien = int64
+- Smoking = Tingkat merokok pasien = int64
+- Passive_Smoker = Tingkat perokok pasif pasien = int64
+- Chest_Pain = Tingkat nyeri dada pasien = int64
+- Coughing_of_Blood = Tingkat batuk darah pasien = int64
+- Fatigue = Tingkat kelelahan pasien = int64
+- Weight_Loss = Tingkat penurunan berat badan pasien = int64
+- Shortness_of_Breath = Tingkat sesak nafas pasien = int64
+- Wheezing = Tingkat mengi pasien = int64
+- Swallowing_Difficulty = Tingkat kesulitan menelan pasien = int64
+- Clubbing_of_Finger_Nails = Tingkat clubbing kuku jari pasien = int64
+- Frequent_Cold = Sering Pilek = int64
+- Dry_Cough = Batuk kering = int64
+- Snoring = Keruh = int64
+- Level = Level kanker paru - paru = object
+  
 ## Data Preparation
 Dataset yang saya gunakan yaitu mengambil dari Kaggle
 
