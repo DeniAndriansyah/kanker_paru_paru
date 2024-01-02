@@ -91,7 +91,7 @@ Lanjut dengan membaca file csv yang telah di extract sebelumnya
 ```bash
 df = pd.read_csv('/content/cancer-patients-and-air-pollution-a-new-link/cancer patient data sets.csv')
 ```
-Lalu melihat 5 baris pertama pada datasetnya untuk memeriksa data apakah sudah benar
+Melihat 5 baris pertama pada datasetnya untuk memeriksa data apakah sudah benar
 ```bash
 df.head()
 ```
