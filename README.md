@@ -176,89 +176,97 @@ plt.show()
 ```
 ![Alt text](e.jpeg) <br>
 
-
-## Visualisasi Data
-Untuk melihat visualisasi dan memahami hubungan antara berbagai fitur dalam dataset dengan warna yang menggambarkan tingkat dan arah korelasi antar fitur
+Selanjutnya 
+Melakukan preprocessing data disini saya memunculkan 5 baris pertama untuk melihat lagi data
 ```bash
-plt.figure(figsize=(10,8))
-sns.heatmap(df.corr(), annot=True)
+df.head()
 ```
-![Alt text](htmp.png) <br>
-mari kita lihat penyebaran kalori per itemnya
+lalu disini untuk mengubah nilai dalam kolom menjadi bentuk numerik 
 ```bash
-chick_fila = df[df['restaurant'] == 'Chick Fil-A']
-plt.figure(figsize=(18, 10))
-plt.title('Chick Fil-A Calorie Per Item')
-sns.barplot(y=chick_fila['item'], x=df['calories'])
+df['Level'] = encode.fit_transform(df['Level'])
 ```
-![download](download.png)
-Tahap selanjutnya
+saya munculkan kembali untuk melihat apakah sudah menjadi numerik
+```bash
+df.head()
+```
+ternyata sudah aman
+selanjutnya disini saya menghapus kolom 'index' dan 'Patient Id'
+```bash
+df = df.drop(columns=['index', 'Patient Id'])
+```
+saya kembali memumnculkan 5 baris pertama karena apa agar meyakinkan saja telah hilang kolom tersebut atau tidak
+```bash
+df.head()
+```
+ternyata aman juga
 ## Modeling
-Karena library yang akan digunakan sudah diawal maka selanjutnya<br>
-Untuk melakukan modeling  memakai algoritma regresi linear dimana harus memisahkan atribut yang akan dijadikan sebagai fitur(x) dan atribut mana yang dijadikan label(y).
+Untuk melakukan modeling  memakai algoritma K-Nearst Neighbors dimana harus memisahkan atribut yang akan dijadikan sebagai fitur(x) dan atribut mana yang dijadikan label(y).
 ```bash
-features = ['fiber', 'total_carb', 'sodium', 'cal_fat', 'total_fat', 'sat_fat', 'protein', 'sugar']
-x=df[features]
-y=df['calories']
+features = ['Age', 'Gender', 'Air Pollution', 'Alcohol use', 'Dust Allergy', 'OccuPational Hazards', 'Genetic Risk', 'chronic Lung Disease', 'Balanced Diet', 'Obesity', 'Coughing of Blood', 'Fatigue', 'Weight Loss', 'Shortness of Breath', 'Wheezing', 'Swallowing Difficulty', 'Clubbing of Finger Nails', 'Frequent Cold', 'Dry Cough', 'Snoring' ]
+x = df[features]
+y = df['Level']
 x.shape, y.shape
 ```
 Setelah itu lakukan split data, memisahkan data training dan data testing 
 ```bash
-x_train, x_test, y_train, y_test = train_test_split(x,y,random_state=70)
-y_test.shape
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 ```
-Selanjutnya masukan data training dan testing ke dalam model regresi linier
+disini saya akan mengukur kinerja model K-Nearest Neighbors (KNN) pada dataset yang sudah dibagi sebelumnya 
 ```bash
-lr = LinearRegression()
-lr.fit(x_train, y_train)
-pred = lr.predict(x_test)
-```
-Setelah itu untuk mengecek akurasi
-```bash
-score = lr.score(x_test, y_test)
-print('akurasi model regresi linier =', score)
-```
-```bash
-akurasi model regresi linier = 0.991859361417439
-```
-Hasil akurasinya yaitu 99.19% bahwa hasil itu adalah hasil data yang akurat<br>
-Selanjutnya melakukan test menggunakan sebuah array value
-```bash
-# fiber =3.0 total_carb =44 sodium =1110 cal_fat=60 total_fat =7 sat_fat =2.0 protein =37.0 sugar =11
-input_data = np.array([[3.0,44,1110,60,7,2.0,37.0,11]])
+accuracies = []
 
-prediction = lr.predict(input_data)
-print('Estimasi kalori pada makanan cepat saji :', prediction)
-```
-```bash
-Estimasi kalori pada makanan cepat saji : [402.15587709]
-```
-Berhasil membuat model dapat diketahui estimasi kalori pada makanan cepat saji, selanjutnya save model sebagai sav agar dapat digunakan pada streamlit
-```bash
-import pickle
+neighbors = range(1, 21)
 
-filename = 'estimasi_kalori.sav'
-pickle.dump(lr,open(filename,'wb'))
-```
-## Evaluation
-Evaluasi ini merupakan seberapa cocok model dengan data yang dipakai.
-Untuk metrik evaluasi yang digunakan yaitu R-squared<br>
-R-squared yaitu koefisien determinasi yang merupakan ukuran seberapa baik model regresi linear cocok dengan data yang diamati
+for k in neighbors:
+    knn = KNeighborsClassifier(n_neighbors=k)
+    knn.fit(x_train, y_train)
+    y_pred = knn.predict(x_test)
+    acc_knn = accuracy_score(y_test, y_pred)
+    accuracies.append(acc_knn)
 
-Selanjutnya untuk evaluasi seberapa baik model cocok dengan data dihitung dengan rumus:<br>
-![Alt text](rms.png) <br>
-```bash
-lr.fit(x_train, y_train)
-y_train_prediction = lr.predict(x_train)
+plt.figure(figsize=(8, 6))
+plt.plot(neighbors, accuracies, marker='o')
+plt.title('KNN: Akurasi terhadap Jumlah Tetangga (n_neighbors)')
+plt.xlabel('Jumlah Tetangga (n_neighbors)')
+plt.ylabel('Akurasi')
+plt.xticks(np.arange(1, 21, step=1))
+plt.grid(True)
+plt.show()
 ```
+disini saya kembali melakukan split data, memisahkan data training dan data testing agar memastikan lagi 
 ```bash
-r_squared = r2_score(y_train, y_train_prediction)
-print(f"R-squared : {r_squared}")
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 ```
+apakah benar pada plot diatas mari kita buktikan lagi
 ```bash
-R-squared : 0.9525584382039234
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(x_train, y_train)
+y_pred = knn.predict(x_test)
+acc_knn = accuracy_score(y_test, y_pred)
+print("Metode K-Nearst Neighboard")
+print("Test set accuracy: {:.2f}".format(acc_knn))
+print(f"Test set accuracy: {acc_knn}")
 ```
-Dan hasil yang saya dapatkan adalah 0.9525584382039234 atau 95.26% model regresi secara umum cukup cocok dengan data, karena memiliki kemampuan yang baik untuk menjelaskan variasi dalam target.
+
+## Visualisasi Hasil Algoritma
+Untuk melihat visualisasi hasil algoritma yang dihasilkan
+```bash
+print("Confusion Matrix:")
+print(confusion_matrix(y_test, y_pred))
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred))
+```
+selanjutnya 
+```bash
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize = (10, 7))
+sns.heatmap(cm, annot=True, cmap='Blues', fmt='g')
+plt.title('Confusion Matrix')
+plt.xlabel('Predicted Label')
+plt.ylabel('Actual')
+```
+![Alt text](htmp.png) <br>
+
 ## Deployment
 [My Estimation App](https://estimasi-kalori-f7tfpsa8flrfnuehxcjzlx.streamlit.app/).
 
