@@ -279,8 +279,7 @@ import pickle
 filename = 'kanker-paru-paru.sav'
 pickle.dump (knn, open(filename, 'wb'))
 ```
-<br>
-##Evaluasi
+## Evaluasi
 Lalu disini memprediksi tingkat keparahan kanker paru paru berdasrkan data masukan
 ```bash
 input_data = (33, 1, 2, 4, 5, 4, 3, 2, 2, 4, 4, 3, 4, 2, 2, 3, 1, 2, 3, 4)
