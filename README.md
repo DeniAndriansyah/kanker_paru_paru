@@ -112,12 +112,21 @@ untuk menghitung jumlah nilai yang hilang di setiap kolom dalam DataFrame
 df.isna().sum()
 ```
 Selanjutnya 
+## EDA
+Menampilkan sebuah loop yang akan memplot countplot untuk setiap kolom pada dataset data. Countplot akan menampilkan jumlah data pada setiap kategori pada kolom tersebut, dengan kategori dibedakan berdasarkan nilai pada kolom 'level'
+```bash
+for i in df.columns:
+    plt.figure(figsize=(20,10))
+    sns.countplot(df,x=i,hue='Level')
+    plt.show()
+```
 ## Visualisasi Data
 Untuk melihat visualisasi dan memahami hubungan antara berbagai fitur dalam dataset dengan warna yang menggambarkan tingkat dan arah korelasi antar fitur
 ```bash
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(), annot=True)
 ```
+![Alt text](htmp.png) <br>
 ![Alt text](htmp.png) <br>
 mari kita lihat penyebaran kalori per itemnya
 ```bash
