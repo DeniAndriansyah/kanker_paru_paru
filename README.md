@@ -120,13 +120,13 @@ for i in df.columns:
     sns.countplot(df,x=i,hue='Level')
     plt.show()
 ```
+![Alt text](a1.jpeg) <br>
 ## Visualisasi Data
 Untuk melihat visualisasi dan memahami hubungan antara berbagai fitur dalam dataset dengan warna yang menggambarkan tingkat dan arah korelasi antar fitur
 ```bash
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(), annot=True)
 ```
-![Alt text](htmp.png) <br>
 ![Alt text](htmp.png) <br>
 mari kita lihat penyebaran kalori per itemnya
 ```bash
