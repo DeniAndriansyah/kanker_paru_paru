@@ -251,7 +251,7 @@ print("Metode K-Nearst Neighboard")
 print("Test set accuracy: {:.2f}".format(acc_knn))
 print(f"Test set accuracy: {acc_knn}")
 ```
-![Alt text](j.jpeg) <br>
+![Alt text](k.jpeg) <br>
 
 ## Visualisasi Hasil Algoritma
 Untuk melihat visualisasi hasil algoritma yang dihasilkan
@@ -270,7 +270,7 @@ plt.title('Confusion Matrix')
 plt.xlabel('Predicted Label')
 plt.ylabel('Actual')
 ```
-![Alt text](i.png) <br>
+![Alt text](i.jpeg) <br>
 
 ## Deployment
 [My Estimation App](https://estimasi-kalori-f7tfpsa8flrfnuehxcjzlx.streamlit.app/).
