@@ -4,22 +4,22 @@
 ### Kelas : Pagi B
 
 ## Domain Proyek
-Proyek ini ditujukan untuk melakukan analisis kangker paru - paru, penyakit ini telah menjadi fokus utama penelitian dalam dunia kedokteran dan kesehatan karena dampaknya yang sangat merusak bagi individu, keluarga, dan bahkan masyarakat secara keseluruhan. Analisis disini menggunakan data yang mencakup informasi gejala- gejala yang dialami pasien untuk menentukan tingkat keparahan kangker paru - paru pasien, hasil dari proyek ini agar bisa membantu dalam pencegahan atau perawatan pasien kanker paru - paru.
+Proyek ini ditujukan untuk melakukan analisis kanker paru - paru, penyakit ini telah menjadi fokus utama penelitian dalam dunia kedokteran dan kesehatan karena dampaknya yang sangat merusak bagi individu, keluarga, dan bahkan masyarakat secara keseluruhan. Analisis disini menggunakan data yang mencakup informasi gejala- gejala yang dialami pasien untuk menentukan tingkat keparahan kanker paru - paru pasien, hasil dari proyek ini agar bisa membantu dalam pencegahan atau perawatan pasien kanker paru - paru.
 
 ## Business Understanding
 Memahami tentang penyakit kanker paru - paru dengan melibatkan gejala - gejala yang dialami yang menjadi penyebab kanker paru - paru itu muncul pada pasien seberapa parah kanker yang dialaminya dan diharapakan bisa menjadi alat yang dapat mengetahui seberapa parah kanker yang dialami pasien.
 
 ### Problem Statements
-Agar dapat mengetahui seberapa tingkat keparahan pasien kanker paru - paru untuk segera mendapatkan perawatan yang efektif
+Agar dapat mengetahui seberapa tingkat keparahan pasien kanker paru - paru untuk segera mendapatkan perawatan yang efektif.
 
 ### Goals
-Untuk mengetahui gejala gejala yang dialami pasien serta tingkat keparahan kanker paru - paru pasien agar mambatu langkah perawatan selnajutnya yang efektif untuk pasien kanker paru - paru
+Untuk mengetahui gejala gejala yang dialami pasien serta tingkat keparahan kanker paru - paru pasien agar mambatu langkah perawatan selnajutnya yang efektif untuk pasien kanker paru - paru.
 
 ### Solution statements
-Pengembangan model prediksi untuk membantu memprediksi seberapa parah kanker paru - paru yang dialami pasien menggunakan algoritma K-Nearst Neighbors
+Pengembangan model prediksi untuk membantu memprediksi seberapa parah kanker paru - paru yang dialami pasien menggunakan algoritma K-Nearst Neighbors.
 
 ## Data Understanding
-Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar analisis terkait prediksi kanker paru - paru <br>
+Dataset yang saya gunakan saya mengambilnya dari Kaggle yang berisi informasi tentang age, gender, air polution, alcohol use, dust allergy, genetik risk, chronic lung disease, balance diet dan lainnya yang kumpulan data ini memberikan pengetahuan tentang gejala - gejala yang dialami pasien, dengan menganalisis data ini kita dapoat memeperoleh pemahaman yang lebih baik ketika ada pasien yang memepunyai gejala - gejala penyakit kanker paru paru dan berupaya menjauhinya ataupun yang sudah terkena segera di lakukan perawatan lebih lanjut.<br>
 [Lung Cancer](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link).
 
 ### Variabel-variabel pada Fastfood Nutrition adalah sebagai berikut:
@@ -46,7 +46,6 @@ Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar ana
 - Frequent_Cold = Sering Pilek = int64
 - Dry_Cough = Batuk kering = int64
 - Snoring = Keruh = int64
-- Level = Level kanker paru - paru = object
   
 ## Data Preparation
 Dataset yang saya gunakan yaitu mengambil dari Kaggle<br>
@@ -113,7 +112,8 @@ untuk menghitung jumlah nilai yang hilang di setiap kolom dalam DataFrame
 df.isna().sum()
 ```
 Selanjutnya 
-## EDA
+
+## Exploratory Data Analysis
 Menampilkan sebuah loop yang akan memplot countplot untuk setiap kolom pada dataset data. Countplot akan menampilkan jumlah data pada setiap kategori pada kolom tersebut, dengan kategori dibedakan berdasarkan nilai pada kolom 'level'
 ```bash
 for i in df.columns:
