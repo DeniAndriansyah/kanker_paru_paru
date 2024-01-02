@@ -272,7 +272,7 @@ plt.ylabel('Actual')
 ```
 ![Alt text](i.jpeg) <br>
 
-Selanjutnya
+Selanjutnya save model sebagai sav agar dapat digunakan pada streamlit
 ```bash
 import pickle
 
@@ -283,5 +283,5 @@ pickle.dump (knn, open(filename, 'wb'))
 ## Deployment
 [Kanker App](https://kankerparuparu-zz2ljvz6d3872djuyxr5at.streamlit.app/).
 
-![Alt text](tm.png)
+![Alt text](l.jpeg)
 
