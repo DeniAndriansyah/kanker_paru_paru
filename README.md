@@ -269,6 +269,7 @@ print(confusion_matrix(y_test, y_pred))
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 ```
+![Alt text](cm.jpeg) <br>
 lalu  membuat visualisasi dari confusion matrix
 ```bash
 cm = confusion_matrix(y_test, y_pred)
