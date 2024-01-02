@@ -121,6 +121,31 @@ for i in df.columns:
     plt.show()
 ```
 ![Alt text](a1.jpeg) <br>
+![Alt text](a2.jpeg) <br>
+![Alt text](a3.jpeg) <br>
+![Alt text](a4.jpeg) <br>
+![Alt text](a5.jpeg) <br>
+![Alt text](a6.jpeg) <br>
+![Alt text](a7.jpeg) <br>
+![Alt text](a8.jpeg) <br>
+![Alt text](a9.jpeg) <br>
+![Alt text](a10.jpeg) <br>
+![Alt text](a11.jpeg) <br>
+![Alt text](a12.jpeg) <br>
+![Alt text](a13.jpeg) <br>
+![Alt text](a14.jpeg) <br>
+![Alt text](a15.jpeg) <br>
+![Alt text](a16.jpeg) <br>
+![Alt text](a17.jpeg) <br>
+![Alt text](a18.jpeg) <br>
+![Alt text](a19.jpeg) <br>
+![Alt text](a20.jpeg) <br>
+![Alt text](a21.jpeg) <br>
+![Alt text](a22.jpeg) <br>
+![Alt text](a23.jpeg) <br>
+![Alt text](a24.jpeg) <br>
+![Alt text](a25.jpeg) <br>
+![Alt text](a26.jpeg) <br>
 ## Visualisasi Data
 Untuk melihat visualisasi dan memahami hubungan antara berbagai fitur dalam dataset dengan warna yang menggambarkan tingkat dan arah korelasi antar fitur
 ```bash
