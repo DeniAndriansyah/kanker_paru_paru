@@ -4,48 +4,48 @@
 ### Kelas : Pagi B
 
 ## Domain Proyek
-
-
+Proyek ini ditujukan untuk melakukan analisis kangker paru - paru, penyakit ini telah menjadi fokus utama penelitian dalam dunia kedokteran dan kesehatan karena dampaknya yang sangat merusak bagi individu, keluarga, dan bahkan masyarakat secara keseluruhan. Analisis disini menggunakan data yang mencakup informasi gejala- gejala yang dialami pasien untuk menentukan tingkat keparahan kangker paru - paru pasien, hasil dari proyek ini agar bisa membantu dalam pencegahan atau perawatan pasien kanker paru - paru.
 
 ## Business Understanding
-
-Memudahkan orang-orang dalam mengecek makanan yang jumlah kalorinya rendah untuk mencegah terkena bergbagi resiko penyakit 
-
-Bagian laporan ini mencakup:
+Memahami tentang penyakit kanker paru - paru dengan melibatkan gejala - gejala yang dialami yang menjadi penyebab kanker paru - paru itu muncul pada pasien seberapa parah kanker yang dialaminya dan diharapakan bisa menjadi alat yang dapat mengetahui seberapa parah kanker yang dialami pasien.
 
 ### Problem Statements
-
-Ketidaktahuan orang- orang pada kandungan makanan yang rendah kalori pada makanan cepat saji.
+Agar dapat mengetahui seberapa tingkat keparahan pasien kanker paru - paru untuk segera mendapatkan perawatan yang baik
 
 ### Goals
-
-Agar kalian waspada dalam membeli makanan cepat saji dan menjaga pola hidup sehat agar terhindar dari berbagai resiko penyakit.
+Untuk mengetahui gejala gejala yang dialami pasien serta tingkat keparahan kanker paru - paru pasien agar mambatu langkah perawatan selnajutnya yang efektif untuk pasien kanker paru - paru
 
 ### Solution statements
-- Pengembangan estimasi kalori berbasis web yang menghitung penjumlahan kalori pada makanan cepat saji untuk memudahkan pengguna mengecek jumlah kalori pada makanan cepat saji terlebih dahulu dengan menggunakan model algoritma regresi linear.
+Pengembangan model prediksi untuk membantu memprediksi seberapa parah kanker paru - paru yang dialami pasien menggunakan algoritma K-Nearst Neighbors
 ## Data Understanding
-Dataset yang saya gunakan saya mengambilnya dari Kaggle yang berisi informasi tentang kalori, lemak, karbohidrat, protein, dan nutrisi penting lainnya, kumpulan data ini memberikan sumber daya berharga bagi ahli gizi, peneliti, dan individu yang sadar kesehatan. Dengan menganalisis kumpulan data ini, kita dapat memperoleh pemahaman yang lebih baik tentang dampak nutrisi dari konsumsi makanan cepat saji dan berupaya menciptakan pilihan makanan yang lebih sehat.<br>
-[Fastfood Nutrition](https://www.kaggle.com/datasets/ulrikthygepedersen/fastfood-nutrition).
+Dataset yang saya gunakan saya mengambilnya dari Kaggle yang merupakan dasar analisis terkait prediksi kanker paru - paru<br>
+[Lung Cancer](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link).
 
 ### Variabel-variabel pada Fastfood Nutrition adalah sebagai berikut:
-- restaurant : Merupakan toko pada makanan cepat saji.(object)
-- item : Merupakan makanan cepat saji.(object)
-- calories : Merupakan kalori pada makanan dan minuman.(int)
-- fiber : Merupakan serat pangan.(float)
-- total_carb : Merupakan jumlah total kabohidrat.(int)
-- sodium : Merupakan penyedap dari bahan alami.(int)
-- cal_fat : Merupakan kalori dari lemak.(int)
-- total_fat : Merupakan total lemak.(int)
-- sat_fat : Merupakan lemak jenuh.(float)
-- protein : Merupakan protein pada makanan.(float)
-- sugar : Merupakan rasa manis pada makanan.(int)
-- trans_fat : Merupakan kemak tak jenuh pada makanan(float)
-- vit_a : Merupakan Vitamin pada makanan(float)
-- vit_c : Merupakan Vitamin pada makanan(float)
-- calcium : Merupakan Kalsium pada makanan(float)
-- cholesterol : Merupakan kolesterol pada makanan(int)
-- salad : Merupakan jenis makanan sayuran(object)
-
+- Patient Id =
+- Age =
+- Gender =
+- Air_Pollution =
+- Alcohol_use =
+- Dust_Allergy =
+- Genetic_Risk =
+- chronic_Lung_Disease =
+- Balanced_Diet =
+- Obesity =
+- Smoking =
+- Passive_Smoker =
+- Chest_Pain =
+- Coughing_of_Blood =
+- Fatigue =
+- Weight_Loss =
+- Shortness_of_Breath =
+- Wheezing =
+- Swallowing_Difficulty =
+- Clubbing_of_Finger_Nails =
+- Frequent_Cold =
+- Dry_Cough =
+- Snoring =
+- Level =
 ## Data Preparation
 Dataset yang saya gunakan yaitu mengambil dari Kaggle
 
