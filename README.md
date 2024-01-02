@@ -273,6 +273,7 @@ plt.ylabel('Actual')
 ![Alt text](i.jpeg) <br>
 
 Selanjutnya
+```bash
 import pickle
 
 filename = 'kanker-paru-paru.sav'
