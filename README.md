@@ -181,6 +181,7 @@ Melakukan preprocessing data disini saya memunculkan 5 baris pertama untuk melih
 ```bash
 df.head()
 ```
+![Alt text](f.jpeg) <br>
 lalu disini untuk mengubah nilai dalam kolom menjadi bentuk numerik 
 ```bash
 df['Level'] = encode.fit_transform(df['Level'])
@@ -189,6 +190,7 @@ saya munculkan kembali untuk melihat apakah sudah menjadi numerik
 ```bash
 df.head()
 ```
+![Alt text](g.jpeg) <br>
 ternyata sudah aman
 selanjutnya disini saya menghapus kolom 'index' dan 'Patient Id'
 ```bash
@@ -198,6 +200,7 @@ saya kembali memumnculkan 5 baris pertama karena apa agar meyakinkan saja telah 
 ```bash
 df.head()
 ```
+![Alt text](h.jpeg) <br>
 ternyata aman juga
 ## Modeling
 Untuk melakukan modeling  memakai algoritma K-Nearst Neighbors dimana harus memisahkan atribut yang akan dijadikan sebagai fitur(x) dan atribut mana yang dijadikan label(y).
@@ -233,6 +236,7 @@ plt.xticks(np.arange(1, 21, step=1))
 plt.grid(True)
 plt.show()
 ```
+![Alt text](j.jpeg) <br>
 disini saya kembali melakukan split data, memisahkan data training dan data testing agar memastikan lagi 
 ```bash
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
@@ -265,7 +269,7 @@ plt.title('Confusion Matrix')
 plt.xlabel('Predicted Label')
 plt.ylabel('Actual')
 ```
-![Alt text](htmp.png) <br>
+![Alt text](j.png) <br>
 
 ## Deployment
 [My Estimation App](https://estimasi-kalori-f7tfpsa8flrfnuehxcjzlx.streamlit.app/).
