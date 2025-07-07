@@ -83,9 +83,9 @@ Selanjutnya mendwonload dataset dari Kaggle
 ```
 Setelah terdownload extract file yang telah terdownload tadi
 ```bash
-!mkdir fastfood-nutrition
-!unzip fastfood-nutrition.zip -d fastfood-nutrition
-!ls fastfood-nutrition
+!mkdir cancer-patients-and-air-pollution-a-new-link
+!unzip cancer-patients-and-air-pollution-a-new-link.zip -d cancer-patients-and-air-pollution-a-new-link
+!ls cancer-patients-and-air-pollution-a-new-link
 ```
 Lanjut dengan membaca file csv yang telah di extract sebelumnya
 ```bash
