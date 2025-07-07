@@ -22,7 +22,7 @@ Pengembangan model prediksi untuk membantu memprediksi seberapa parah kanker par
 Dataset yang saya gunakan saya mengambilnya dari Kaggle yang berisi informasi tentang age, gender, air polution, alcohol use, dust allergy, genetik risk, chronic lung disease, balance diet dan lainnya yang kumpulan data ini memberikan pengetahuan tentang gejala - gejala yang dialami pasien, dengan menganalisis data ini kita dapat memperoleh pemahaman yang lebih baik ketika ada pasien yang memepunyai gejala - gejala penyakit kanker paru paru dan berupaya menjauhinya ataupun yang sudah terkena segera di lakukan perawatan lebih lanjut.<br>
 [Lung Cancer](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link).
 
-### Variabel-variabel pada Fastfood Nutrition adalah sebagai berikut:
+### Variabel-variabel pada Lung Cancer adalah sebagai berikut:
 - Patient Id = Identitas Pasien = object
 - Age = Usia pasien = int64
 - Gender = Jenis kelamin pasien = int64
